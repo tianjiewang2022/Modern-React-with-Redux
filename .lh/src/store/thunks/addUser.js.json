@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/store/thunks/addUser.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1679952496146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679952606976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import { createAsyncThunk } from \"@reduxjs/toolkit\";\n\\ No newline at end of file\n+import { createAsyncThunk } from \"@reduxjs/toolkit\"\n+\n+const addUser = createAsyncThunk('users/add')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952634644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n-\n+import axios from 'axios';\n+import { Faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952645670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n-import { Faker } from \"@faker-js/faker\";\n+import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952667146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n-const addUser = createAsyncThunk('users/add')\n\\ No newline at end of file\n+const addUser = createAsyncThunk('users/add', async () => {\n+\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952703809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n-\n+    const response = await axios.post('http://localhost:3005')\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952722048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n-    const response = await axios.post('http://localhost:3005')\n+    const response = await axios.post('http://localhost:3005/users', {\n+\n+    })\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952752448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n     const response = await axios.post('http://localhost:3005/users', {\n-\n+        name:\n     })\n\\ No newline at end of file\n-})\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952762723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n     const response = await axios.post('http://localhost:3005/users', {\n-        name:\n+        name: faker.name.fullName\n     })\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952779504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,9 @@\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n     const response = await axios.post('http://localhost:3005/users', {\n-        name: faker.name.fullName\n+        name: faker.name.fullName()\n     })\n+\n+    return response.data;\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952795734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n     const response = await axios.post('http://localhost:3005/users', {\n-        name: faker.name.fullName()\n+        name: faker.name.fullName;\n     })\n \n     return response.data;\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952808748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n     const response = await axios.post('http://localhost:3005/users', {\n-        name: faker.name.fullName;\n+        name: faker.name.fullName(),\n     })\n \n     return response.data;\n\\ No newline at end of file\n-});\n+});\n+\n+export { addUser }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679952852599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n \n     return response.data;\n });\n \n-export { addUser }\n\\ No newline at end of file\n+export { addUser };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679957607608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n-    const response = await axios.post('http://localhost:3005/users', {\n+    const response = await axios.post('ttp://localhost:3005/users', {\n         name: faker.name.fullName(),\n     })\n \n     return response.data;\n"
+                },
+                {
+                    "date": 1679957634681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { createAsyncThunk } from \"@reduxjs/toolkit\"\n import axios from 'axios';\n import { faker } from \"@faker-js/faker\";\n const addUser = createAsyncThunk('users/add', async () => {\n-    const response = await axios.post('ttp://localhost:3005/users', {\n+    const response = await axios.post('http://localhost:3005/users', {\n         name: faker.name.fullName(),\n     })\n \n     return response.data;\n"
+                }
+            ],
+            "date": 1679952496146,
+            "name": "Commit-0",
+            "content": "import { createAsyncThunk } from \"@reduxjs/toolkit\";"
+        }
+    ]
+}

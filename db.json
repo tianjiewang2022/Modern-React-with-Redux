@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Johnnie McCullough",
+      "id": 2
+    },
+    {
+      "name": "Cristina Kub",
+      "id": 3
+    },
+    {
+      "name": "Theodore O'Hara",
+      "id": 4
+    },
+    {
+      "name": "Clinton Zemlak",
+      "id": 5
+    },
+    {
+      "name": "Amelia Funk",
+      "id": 6
+    },
+    {
+      "name": "Jo Cummerata",
+      "id": 7
+    },
+    {
+      "name": "Keith Turcotte MD",
+      "id": 8
+    },
+    {
+      "name": "Saul Harber",
+      "id": 9
+    },
+    {
+      "name": "Rosemarie Bednar",
+      "id": 10
+    },
+    {
+      "name": "Melissa Dooley",
+      "id": 11
+    },
+    {
+      "name": "Saul Bergnaum I",
+      "id": 12
+    },
+    {
+      "name": "Ricky Welch",
+      "id": 13
+    },
+    {
+      "name": "Elijah Huels",
+      "id": 14
+    },
+    {
+      "name": "Victoria Wunsch",
+      "id": 15
+    },
+    {
+      "name": "Wm Hoeger",
+      "id": 16
+    }
+  ],
+  "albums": [],
+  "photos": []
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/media-components/Button.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1679958976403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679958989835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import className from 'classnames';\n-import { GoSync } from 'react-icons/go'\n+import { GoSync } from 'react-icons/go';\n function Button({\n   children,\n   primary,\n   secondary,\n@@ -8,8 +8,9 @@\n   warning,\n   danger,\n   outline,\n   rounded,\n+  loading\n   ...rest\n }) {\n   const classes = className(\n     rest.className,\n"
+                },
+                {
+                    "date": 1679959004170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,14 @@\n   warning,\n   danger,\n   outline,\n   rounded,\n-  loading\n+  loading,\n   ...rest\n }) {\n   const classes = className(\n     rest.className,\n-    'flex items-center px-3 py-1.5 border',\n+    'flex items-center px-3 py-1.5 border h-8',\n     {\n       'border-blue-500 bg-blue-500 text-white': primary,\n       'border-gray-900 bg-gray-900 text-white': secondary,\n       'border-green-500 bg-green-500 text-white': success,\n"
+                },
+                {
+                    "date": 1679959029942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n   const classes = className(\n     rest.className,\n     'flex items-center px-3 py-1.5 border h-8',\n     {\n+      'opacity-80': loadingm\n       'border-blue-500 bg-blue-500 text-white': primary,\n       'border-gray-900 bg-gray-900 text-white': secondary,\n       'border-green-500 bg-green-500 text-white': success,\n       'border-yellow-400 bg-yellow-400 text-white': warning,\n"
+                },
+                {
+                    "date": 1679959049123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   const classes = className(\n     rest.className,\n     'flex items-center px-3 py-1.5 border h-8',\n     {\n-      'opacity-80': loadingm\n+      'opacity-80': loading,\n       'border-blue-500 bg-blue-500 text-white': primary,\n       'border-gray-900 bg-gray-900 text-white': secondary,\n       'border-green-500 bg-green-500 text-white': success,\n       'border-yellow-400 bg-yellow-400 text-white': warning,\n@@ -32,9 +32,9 @@\n     }\n   );\n \n   return (\n-    <button {...rest} className={classes}>\n+    <button {...rest} disabled={loading} className={classes}>\n       {children}\n     </button>\n   );\n }\n"
+                },
+                {
+                    "date": 1679959108729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,10 @@\n   );\n \n   return (\n     <button {...rest} disabled={loading} className={classes}>\n-      {children}\n+      {/* {children} */}\n+      {loading ? <GoSync className='animate-spin' /> : children}\n     </button>\n   );\n }\n \n"
+                }
+            ],
+            "date": 1679958976403,
+            "name": "Commit-0",
+            "content": "import className from 'classnames';\nimport { GoSync } from 'react-icons/go'\nfunction Button({\n  children,\n  primary,\n  secondary,\n  success,\n  warning,\n  danger,\n  outline,\n  rounded,\n  ...rest\n}) {\n  const classes = className(\n    rest.className,\n    'flex items-center px-3 py-1.5 border',\n    {\n      'border-blue-500 bg-blue-500 text-white': primary,\n      'border-gray-900 bg-gray-900 text-white': secondary,\n      'border-green-500 bg-green-500 text-white': success,\n      'border-yellow-400 bg-yellow-400 text-white': warning,\n      'border-red-500 bg-red-500 text-white': danger,\n      'rounded-full': rounded,\n      'bg-white': outline,\n      'text-blue-500': outline && primary,\n      'text-gray-900': outline && secondary,\n      'text-green-500': outline && success,\n      'text-yellow-400': outline && warning,\n      'text-red-500': outline && danger,\n    }\n  );\n\n  return (\n    <button {...rest} className={classes}>\n      {children}\n    </button>\n  );\n}\n\nButton.propTypes = {\n  checkVariationValue: ({ primary, secondary, success, warning, danger }) => {\n    const count =\n      Number(!!primary) +\n      Number(!!secondary) +\n      Number(!!warning) +\n      Number(!!success) +\n      Number(!!danger);\n\n    if (count > 1) {\n      return new Error(\n        'Only one of primary, secondary, success, warning, danger can be true'\n      );\n    }\n  },\n};\n\nexport default Button;\n"
+        }
+    ]
+}

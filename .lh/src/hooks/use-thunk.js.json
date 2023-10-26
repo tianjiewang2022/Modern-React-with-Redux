@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/hooks/use-thunk.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1679958793636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1679958793636,
+            "name": "Commit-0",
+            "content": "import { useState, useCallback } from 'react';\nimport { useDispatch } from 'react-redux';\n\n\n\nfunction useThunk(thunk) {\n    const [isLoading, setIsLoading] = useState(false);\n    const [error, setError] = useState(null);\n    const dispatch = useDispatch();\n\n    const runThunk = useCallback(\n        (arg) => {\n            setIsLoading(true);\n            dispatch(thunk(arg))\n                .unwrap()\n                .catch(err => setError(err))\n                .finally(() => setIsLoading(false));\n        }, [dispatch, thunk]);\n    return [runThunk, isLoading, error];\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "db.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1679942766692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1679942766692,
+            "name": "Commit-0",
+            "content": "{\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"Myra\"\n        }\n    ],\n    \"albums\": [],\n    \"photos\": []\n}"
+        }
+    ]
+}

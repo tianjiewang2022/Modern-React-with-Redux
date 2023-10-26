@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/store/index.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1679944381998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679951918450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n         users: usersReducer\n     }\n });\n \n-export * from './thunks/fetchUsers';\n+export * from './thunks/fetchUsers'\n"
+                },
+                {
+                    "date": 1679953724965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n         users: usersReducer\n     }\n });\n \n-export * from './thunks/fetchUsers'\n+export * from './thunks'\n"
+                },
+                {
+                    "date": 1679953777094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,6 @@\n         users: usersReducer\n     }\n });\n \n-export * from './thunks'\n+export * from './thunks/fetchUsers'\n+export * from './thunks/addUser'\n"
+                },
+                {
+                    "date": 1679954235271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n     }\n });\n \n export * from './thunks/fetchUsers'\n-export * from './thunks/addUser'\n+export * from './thunks/a'\n"
+                },
+                {
+                    "date": 1679954246561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,5 @@\n     }\n });\n \n export * from './thunks/fetchUsers'\n-export * from './thunks/a'\n+export * from './thunks/addUser'\n"
+                }
+            ],
+            "date": 1679944381998,
+            "name": "Commit-0",
+            "content": "import { configureStore } from \"@reduxjs/toolkit\";\nimport { useReducer } from \"react\"; import { usersReducer } from \"./slices/userSlice\";\n;\n\nexport const store = configureStore({\n    reducer: {\n        users: usersReducer\n    }\n});\n\nexport * from './thunks/fetchUsers';\n"
+        }
+    ]
+}

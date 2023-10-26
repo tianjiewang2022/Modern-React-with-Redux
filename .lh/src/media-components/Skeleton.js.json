@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/media-components/Skeleton.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1679947095366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679947137451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import classNames from \"classnames\";\n \n-function Skeleton({ times }=> {\n+function Skeleton({ times }) {\n \n\\ No newline at end of file\n-})\n+}\n+\n+export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947221399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,12 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n \n+    const boxes = [];\n+    for (let i = 0; i < times; i++) {\n+        boxes.push(<div />)\n+    }\n+\n }\n \n export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947230944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Skeleton({ times }) {\n \n     const boxes = [];\n     for (let i = 0; i < times; i++) {\n-        boxes.push(<div />)\n+        boxes.push(<div key={i} />)\n     }\n \n }\n \n"
+                },
+                {
+                    "date": 1679947255418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,9 @@\n     for (let i = 0; i < times; i++) {\n         boxes.push(<div key={i} />)\n     }\n \n+    return boxes;\n+\n }\n \n export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947280376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n \n-    const boxes = [];\n-    for (let i = 0; i < times; i++) {\n-        boxes.push(<div key={i} />)\n-    }\n+    // const boxes = [];\n+    // for (let i = 0; i < times; i++) {\n+    //     boxes.push(<div key={i} />)\n+    // }\n \n-    return boxes;\n+    // return boxes;\n \n }\n \n export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947310616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n+    const boxes = Array(times),\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n     //     boxes.push(<div key={i} />)\n     // }\n \n-    // return boxes;\n+    return boxes;\n \n }\n \n export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947344661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n-    const boxes = Array(times),\n+    const boxes = Array(times).fill(0).map((_, i))=> {\n+        return <div key={i} />\n+    }\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n     //     boxes.push(<div key={i} />)\n"
+                },
+                {
+                    "date": 1679947409304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n     const boxes = Array(times).fill(0).map((_, i))=> {\n-        return <div key={i} />\n+        return <div key={i} />;\n     }\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n"
+                },
+                {
+                    "date": 1679947424165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import classNames from \"classnames\";\n \n function Skeleton({ times }) {\n-    const boxes = Array(times).fill(0).map((_, i))=> {\n+    const boxes = Array(times).fill(0).map((_, i) => {\n         return <div key={i} />;\n-    }\n+    });\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n     //     boxes.push(<div key={i} />)\n"
+                },
+                {
+                    "date": 1679947846000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import classNames from \"classnames\";\n \n+\n function Skeleton({ times }) {\n     const boxes = Array(times).fill(0).map((_, i) => {\n-        return <div key={i} />;\n+        return <div key={i} >;\n     });\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n@@ -13,5 +14,5 @@\n     return boxes;\n \n }\n \n-export default Skeleton;\n\\ No newline at end of file\n+            export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947856606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n \n function Skeleton({ times }) {\n     const boxes = Array(times).fill(0).map((_, i) => {\n-        return <div key={i} >;\n+        return <div key={i}></div>;\n     });\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n@@ -14,5 +14,5 @@\n     return boxes;\n \n }\n \n-            export default Skeleton;\n\\ No newline at end of file\n+export default Skeleton;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679947867114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \n \n function Skeleton({ times }) {\n     const boxes = Array(times).fill(0).map((_, i) => {\n-        return <div key={i}></div>;\n+        return <div key={i}>\n+            <div />\n+        </div>;\n     });\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n"
+                },
+                {
+                    "date": 1679947874448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n import classNames from \"classnames\";\n \n \n function Skeleton({ times }) {\n-    const boxes = Array(times).fill(0).map((_, i) => {\n-        return <div key={i}>\n-            <div />\n-        </div>;\n-    });\n+    const boxes = Array(times)\n+        .fill(0)\n+        .map((_, i) => {\n+            return <div key={i}>\n+                <div />\n+            </div>;\n+        });\n \n     // const boxes = [];\n     // for (let i = 0; i < times; i++) {\n     //     boxes.push(<div key={i} />)\n"
+                },
+                {
+                    "date": 1679947891555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import classNames from \"classnames\";\n \n \n function Skeleton({ times }) {\n+    const\n+\n+\n+\n+\n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n             return <div key={i}>\n"
+                },
+                {
+                    "date": 1679947912788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import classNames from \"classnames\";\n \n \n function Skeleton({ times }) {\n-    const\n+    const outerClassNames = classNames();\n \n \n \n \n"
+                },
+                {
+                    "date": 1679947931082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n \n function Skeleton({ times }) {\n     const outerClassNames = classNames();\n+    const innerClassNames = classNames();\n \n \n \n \n"
+                },
+                {
+                    "date": 1679947955156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n-            return <div key={i}>\n+            return <div key={i} classNames={outerClassNames}>\n                 <div />\n             </div>;\n         });\n \n"
+                },
+                {
+                    "date": 1679947972952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n             return <div key={i} classNames={outerClassNames}>\n-                <div />\n+                <div classNames={innerClassNames} />\n             </div>;\n         });\n \n     // const boxes = [];\n"
+                },
+                {
+                    "date": 1679948012160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n             return <div key={i} classNames={outerClassNames}>\n-                <div classNames={innerClassNames} />\n+                <div className={innerClassNames} />\n             </div>;\n         });\n \n     // const boxes = [];\n"
+                },
+                {
+                    "date": 1679948046879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n             return <div key={i} classNames={outerClassNames}>\n-                <div className={innerClassNames} />\n+                <div className={innerCalas\n+                } />\n             </div>;\n         });\n \n     // const boxes = [];\n"
+                },
+                {
+                    "date": 1679948052022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,9 @@\n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n             return <div key={i} classNames={outerClassNames}>\n-                <div className={innerCalas\n-                } />\n+                <div className={innerClassNames} />\n             </div>;\n         });\n \n     // const boxes = [];\n"
+                },
+                {
+                    "date": 1679948099698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,15 @@\n import classNames from \"classnames\";\n \n \n function Skeleton({ times }) {\n-    const outerClassNames = classNames();\n+    const outerClassNames = classNames(\n+        'relative',\n+        'overflow-hidden',\n+        'bg-gray-200',\n+        'rounded',\n+        'mb-2.5'\n+    );\n     const innerClassNames = classNames();\n \n \n \n"
+                },
+                {
+                    "date": 1679948165712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,14 @@\n         'bg-gray-200',\n         'rounded',\n         'mb-2.5'\n     );\n-    const innerClassNames = classNames();\n+    const innerClassNames = classNames(\n+        'animate-shimmer',\n+        'absolute',\n+        'inset-0',\n+        '-translate-x-full'\n+    );\n \n \n \n \n"
+                },
+                {
+                    "date": 1679949410543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import classNames from \"classnames\";\n \n \n-function Skeleton({ times }) {\n+function Skeleton({ times, className }) {\n     const outerClassNames = classNames(\n         'relative',\n         'overflow-hidden',\n         'bg-gray-200',\n"
+                },
+                {
+                    "date": 1679949417164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n         'relative',\n         'overflow-hidden',\n         'bg-gray-200',\n         'rounded',\n-        'mb-2.5'\n+        'mb-2.5',\n+        className\n     );\n     const innerClassNames = classNames(\n         'animate-shimmer',\n         'absolute',\n"
+                },
+                {
+                    "date": 1679949494039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n     const boxes = Array(times)\n         .fill(0)\n         .map((_, i) => {\n-            return <div key={i} classNames={outerClassNames}>\n+            return <div key={i} className={outerClassNames}>\n                 <div className={innerClassNames} />\n             </div>;\n         });\n \n"
+                },
+                {
+                    "date": 1679949533969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         'relative',\n         'overflow-hidden',\n         'bg-gray-200',\n         'rounded',\n-        'mb-2.5',\n+        'mb-2.5'\n         className\n     );\n     const innerClassNames = classNames(\n         'animate-shimmer',\n"
+                },
+                {
+                    "date": 1679949551785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n         'relative',\n         'overflow-hidden',\n         'bg-gray-200',\n         'rounded',\n-        'mb-2.5'\n+        'mb-2.5',\n         className\n     );\n     const innerClassNames = classNames(\n         'animate-shimmer',\n"
+                },
+                {
+                    "date": 1679949767527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n     const innerClassNames = classNames(\n         'animate-shimmer',\n         'absolute',\n         'inset-0',\n-        '-translate-x-full'\n+        '-translate-x-full',\n+        'bg-gradient-to-r',\n+\n     );\n \n \n \n"
+                },
+                {
+                    "date": 1679949802011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n         'absolute',\n         'inset-0',\n         '-translate-x-full',\n         'bg-gradient-to-r',\n-\n+        'from-gray-200',\n+        'via-white',\n     );\n \n \n \n"
+                },
+                {
+                    "date": 1679949817246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n         '-translate-x-full',\n         'bg-gradient-to-r',\n         'from-gray-200',\n         'via-white',\n+        'to-gray-200'\n     );\n \n \n \n"
+                }
+            ],
+            "date": 1679947095366,
+            "name": "Commit-0",
+            "content": "import classNames from \"classnames\";\n\nfunction Skeleton({ times }=> {\n\n})"
+        }
+    ]
+}

@@ -1,0 +1,482 @@
+{
+    "sourceFile": "src/media-components/UsersList.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 116,
+            "patches": [
+                {
+                    "date": 1679944469983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1679944493939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { useEffect } from \"react\";\n+import { useDispatch } from \"react-redux\";\n \n \n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679944516247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { useEffect } from \"react\";\n import { useDispatch } from \"react-redux\";\n+import { fetchUsers } from \"../store\";\n \n \n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679944616340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n \n \n function UsersList() {\n-    return 'Users List';\n+    const dispatch = useDispatch();\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679944635224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,11 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n+\n+    useEffect(() => {\n+\n+    })\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679944643093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n     const dispatch = useDispatch();\n \n     useEffect(() => {\n \n-    })\n+    }, [])\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679944670098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n function UsersList() {\n     const dispatch = useDispatch();\n \n     useEffect(() => {\n+        dispatch(fetchUsers());\n \n     }, [])\n }\n \n"
+                },
+                {
+                    "date": 1679944690851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n \n-    }, [])\n+    }, [dispatch])\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679944698443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n \n-    }, [dispatch])\n+    }, [dispatch]);\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679944711556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,8 @@\n     useEffect(() => {\n         dispatch(fetchUsers());\n \n     }, [dispatch]);\n+    return 'Users List';\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945687934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { useEffect } from \"react\";\n-import { useDispatch } from \"react-redux\";\n+import { useDispatch, useSelector } from \"react-redux\";\n import { fetchUsers } from \"../store\";\n \n \n \n"
+                },
+                {
+                    "date": 1679945722458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,11 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n+    useSelector((state) => {\n+        return state.users;\n+    })\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n \n"
+                },
+                {
+                    "date": 1679945758591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,21 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n-    useSelector((state) => {\n-        return state.users;\n-    })\n+    const { if (condition) {\n \n-    useEffect(() => {\n-        dispatch(fetchUsers());\n+    } else {\n \n-    }, [dispatch]);\n-    return 'Users List';\n+    }\n+} useSelector((state) => {\n+    return state.users;\n+})\n+\n+useEffect(() => {\n+    dispatch(fetchUsers());\n+\n+}, [dispatch]);\n+return 'Users List';\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945775431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,21 +5,16 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n-    const { if (condition) {\n+    const { isLoading, data, error }useSelector((state) => {\n+        return state.users;\n+    })\n \n-    } else {\n+    useEffect(() => {\n+        dispatch(fetchUsers());\n \n-    }\n-} useSelector((state) => {\n-    return state.users;\n-})\n-\n-useEffect(() => {\n-    dispatch(fetchUsers());\n-\n-}, [dispatch]);\n-return 'Users List';\n+    }, [dispatch]);\n+    return 'Users List';\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945782294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n-    const { isLoading, data, error }useSelector((state) => {\n+    const { isLoading, data, error } = useSelector((state) => {\n         return state.users;\n     })\n \n     useEffect(() => {\n"
+                },
+                {
+                    "date": 1679945829424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,12 @@\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n \n+        if (isLoading === true) {\n+            return < div>Loading...</div>\n+        }\n+\n     }, [dispatch]);\n     return 'Users List';\n }\n \n"
+                },
+                {
+                    "date": 1679945847094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     useEffect(() => {\n         dispatch(fetchUsers());\n \n         if (isLoading === true) {\n-            return < div>Loading...</div>\n+            return <div>Loading</div>;\n         }\n \n     }, [dispatch]);\n     return 'Users List';\n"
+                },
+                {
+                    "date": 1679945857423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     useEffect(() => {\n         dispatch(fetchUsers());\n \n         if (isLoading === true) {\n-            return <div>Loading</div>;\n+            return <div>Loading...</div>\n         }\n \n     }, [dispatch]);\n     return 'Users List';\n"
+                },
+                {
+                    "date": 1679945870111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n     useEffect(() => {\n         dispatch(fetchUsers());\n \n         if (isLoading === true) {\n-            return <div>Loading...</div>\n+            return <div>Loading...</div>;\n+            if (error)\n         }\n \n     }, [dispatch]);\n     return 'Users List';\n"
+                },
+                {
+                    "date": 1679945909084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,12 @@\n         dispatch(fetchUsers());\n \n         if (isLoading === true) {\n             return <div>Loading...</div>;\n-            if (error)\n         }\n+        if (error) {\n+            return <div>Error fetching data...</div>\n+        }\n \n     }, [dispatch]);\n     return 'Users List';\n }\n"
+                },
+                {
+                    "date": 1679945940945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,17 +11,18 @@\n     })\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n+    }, [dispatch]);\n \n-        if (isLoading === true) {\n-            return <div>Loading...</div>;\n-        }\n-        if (error) {\n-            return <div>Error fetching data...</div>\n-        }\n+    if (isLoading === true) {\n+        return <div>Loading...</div>;\n+    }\n+    if (error) {\n+        return <div>Error fetching data...</div>;\n+    }\n \n-    }, [dispatch]);\n+\n     return 'Users List';\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945961678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,10 @@\n         return <div>Error fetching data...</div>;\n     }\n \n \n-    return 'Users List';\n+    return <div>\n+        {data.length}\n+    </div>\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945970374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n \n \n     return <div>\n-        {data.length}\n-    </div>\n+        {data.length()}\n+    </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945981959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n \n \n     return <div>\n-        {data.length()}\n+        {data.length}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945991056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n \n \n     return <div>\n-        {data.length}\n+        {data.length()}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679945996479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\n \n \n     return <div>\n-        {data.length()}\n+        {data.length}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679946253597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,14 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n+    useSelector((state) => {\n+\n+    })\n+\n+\n+\n     const { isLoading, data, error } = useSelector((state) => {\n         return state.users;\n     })\n \n"
+                },
+                {
+                    "date": 1679946276490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,11 @@\n \n function UsersList() {\n     const dispatch = useDispatch();\n     useSelector((state) => {\n+        return state.users;\n \n-    })\n+    });\n \n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679946298095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n function UsersList() {\n     const dispatch = useDispatch();\n     useSelector((state) => {\n         return state.users;\n-\n     });\n \n \n \n"
+                },
+                {
+                    "date": 1679946313290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,12 @@\n \n \n function UsersList() {\n     const dispatch = useDispatch();\n-    useSelector((state) => {\n-        return state.users;\n-    });\n \n \n \n+\n     const { isLoading, data, error } = useSelector((state) => {\n         return state.users;\n     })\n \n"
+                },
+                {
+                    "date": 1679947455052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { useEffect } from \"react\";\n import { useDispatch, useSelector } from \"react-redux\";\n import { fetchUsers } from \"../store\";\n+import Skeleton from \"./Skeleton\";\n \n \n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679947497134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n         dispatch(fetchUsers());\n     }, [dispatch]);\n \n     if (isLoading === true) {\n-        return <div>Loading...</div>;\n+        // return <div>Loading...</div>;\n+        return <Skeleton times={6} />\n     }\n     if (error) {\n         return <div>Error fetching data...</div>;\n     }\n"
+                },
+                {
+                    "date": 1679947536880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,8 @@\n function UsersList() {\n     const dispatch = useDispatch();\n \n \n-\n-\n     const { isLoading, data, error } = useSelector((state) => {\n         return state.users;\n     })\n \n@@ -20,9 +18,9 @@\n     }, [dispatch]);\n \n     if (isLoading === true) {\n         // return <div>Loading...</div>;\n-        return <Skeleton times={6} />\n+        return <Skeleton times={6} />;\n     }\n     if (error) {\n         return <div>Error fetching data...</div>;\n     }\n"
+                },
+                {
+                    "date": 1679949461584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     }, [dispatch]);\n \n     if (isLoading === true) {\n         // return <div>Loading...</div>;\n-        return <Skeleton times={6} />;\n+        return <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n     if (error) {\n         return <div>Error fetching data...</div>;\n     }\n"
+                },
+                {
+                    "date": 1679951615242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,14 @@\n         return <div>Error fetching data...</div>;\n     }\n \n \n+    const renderedUsers = data.map((user) => {\n+        return <div key={user.id} className=\"mb-2 border rounded\">\n+            <div className=\"flex p-2 justify-between items-center cursor-pointer\"\n+\n+        </div>\n+    })\n     return <div>\n         {data.length}\n     </div>;\n }\n"
+                },
+                {
+                    "date": 1679951625304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,12 @@\n         return <div key={user.id} className=\"mb-2 border rounded\">\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\"\n \n         </div>\n+        </div >\n     })\n-    return <div>\n-        {data.length}\n-    </div>;\n+return <div>\n+    {data.length}\n+</div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679951640609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\"\n \n         </div>\n         </div >\n-    })\n+    });\n return <div>\n     {data.length}\n </div>;\n }\n"
+                },
+                {
+                    "date": 1679951652162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,15 +27,15 @@\n \n \n     const renderedUsers = data.map((user) => {\n         return <div key={user.id} className=\"mb-2 border rounded\">\n-            <div className=\"flex p-2 justify-between items-center cursor-pointer\"\n+            <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n \n-        </div>\n+            </div>\n         </div >\n     });\n-return <div>\n-    {data.length}\n-</div>;\n+    return <div>\n+        {data.length}\n+    </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679951664013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     const renderedUsers = data.map((user) => {\n         return <div key={user.id} className=\"mb-2 border rounded\">\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n-\n+                {user.name}\n             </div>\n         </div >\n     });\n     return <div>\n"
+                },
+                {
+                    "date": 1679951679361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n             </div>\n         </div >\n     });\n     return <div>\n-        {data.length}\n+        {renderedUsers}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679951826957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,13 @@\n     }\n \n \n     const renderedUsers = data.map((user) => {\n-        return <div key={user.id} className=\"mb-2 border rounded\">\n+        return (<div key={user.id} className=\"mb-2 border rounded\">\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n                 {user.name}\n             </div>\n-        </div >\n+        </div >);\n     });\n     return <div>\n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679951852712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,16 +26,16 @@\n     }\n \n \n     const renderedUsers = data.map((user) => {\n-        return (<div key={user.id} className=\"mb-2 border rounded\">\n+        return <div key={user.id} className=\"mb-2 border rounded\">\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n                 {user.name}\n             </div>\n-        </div >);\n+        </div >\n     });\n     return <div>\n-        {renderedUsers}\n+        { }\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679951863331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n             </div>\n         </div >\n     });\n     return <div>\n-        { }\n+        {renderedUsers}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679951873191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,13 @@\n     }\n \n \n     const renderedUsers = data.map((user) => {\n-        return <div key={user.id} className=\"mb-2 border rounded\">\n+        return (<div key={user.id} className=\"mb-2 border rounded\">\n             <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n                 {user.name}\n             </div>\n-        </div >\n+        </div >);\n     });\n     return <div>\n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679953289441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import { useEffect } from \"react\";\n import { useDispatch, useSelector } from \"react-redux\";\n-import { fetchUsers } from \"../store\";\n+import { fetchUsers, addUser } from \"../store\";\n+import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n \n \n \n+\n function UsersList() {\n     const dispatch = useDispatch();\n \n \n@@ -26,13 +28,15 @@\n     }\n \n \n     const renderedUsers = data.map((user) => {\n-        return (<div key={user.id} className=\"mb-2 border rounded\">\n-            <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n-                {user.name}\n-            </div>\n-        </div >);\n+        return (\n+            <div key={user.id} className=\"mb-2 border rounded\">\n+                <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n+                    {user.name}\n+                </div>\n+            </div >\n+        );\n     });\n     return <div>\n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679953343600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,10 @@\n             </div >\n         );\n     });\n     return <div>\n-        {renderedUsers}\n+        <div className=\"flex flex-row justify-between m-3\"\n+            {renderedUsers}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679953368249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,13 @@\n             </div >\n         );\n     });\n     return <div>\n-        <div className=\"flex flex-row justify-between m-3\"\n-            {renderedUsers}\n+        <div className=\"flex flex-row justify-between m-3\">\n+            <h1 className=\"m-2 text-xl\">Users</h1>\n+        </div>\n+\n+        {renderedUsers}\n     </div>;\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679953435526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,8 @@\n         );\n     });\n     return <div>\n         <div className=\"flex flex-row justify-between m-3\">\n-            <h1 className=\"m-2 text-xl\">Users</h1>\n         </div>\n \n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679953456500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n         );\n     });\n     return <div>\n         <div className=\"flex flex-row justify-between m-3\">\n+            <h1 className=\"m-2 text-xl\">Users</h1>\n         </div>\n \n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679953493879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,10 @@\n     });\n     return <div>\n         <div className=\"flex flex-row justify-between m-3\">\n             <h1 className=\"m-2 text-xl\">Users</h1>\n+            <Button onClick={handleUserAdd}></Button>\n+\n         </div>\n \n         {renderedUsers}\n     </div>;\n"
+                },
+                {
+                    "date": 1679953500800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,11 @@\n     });\n     return <div>\n         <div className=\"flex flex-row justify-between m-3\">\n             <h1 className=\"m-2 text-xl\">Users</h1>\n-            <Button onClick={handleUserAdd}></Button>\n+            <Button onClick={handleUserAdd}>\n+                + Add User\n+            </Button>\n \n         </div>\n \n         {renderedUsers}\n"
+                },
+                {
+                    "date": 1679953568465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,12 @@\n     useEffect(() => {\n         dispatch(fetchUsers());\n     }, [dispatch]);\n \n+    const handleUserAdd = () => {\n+        dispatch(addUser());\n+    }\n+\n     if (isLoading === true) {\n         // return <div>Loading...</div>;\n         return <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n"
+                },
+                {
+                    "date": 1679953841918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n         dispatch(fetchUsers());\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n-        dispatch(addUser());\n-    }\n+        dispatch(addUser);\n+    };\n \n     if (isLoading === true) {\n         // return <div>Loading...</div>;\n         return <Skeleton times={6} className=\"h-10 w-full\" />;\n"
+                },
+                {
+                    "date": 1679953880179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         dispatch(fetchUsers());\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n-        dispatch(addUser);\n+        dispatch(addUser());\n     };\n \n     if (isLoading === true) {\n         // return <div>Loading...</div>;\n"
+                },
+                {
+                    "date": 1679953979853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n         return state.users;\n-    })\n+    });\n \n     useEffect(() => {\n         dispatch(fetchUsers());\n     }, [dispatch]);\n"
+                },
+                {
+                    "date": 1679954095340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,18 +40,19 @@\n                 </div>\n             </div >\n         );\n     });\n-    return <div>\n-        <div className=\"flex flex-row justify-between m-3\">\n-            <h1 className=\"m-2 text-xl\">Users</h1>\n-            <Button onClick={handleUserAdd}>\n-                + Add User\n-            </Button>\n+    return (\n+        <div>\n+            <div className=\"flex flex-row justify-between m-3\">\n+                <h1 className=\"m-2 text-xl\">Users</h1>\n+                <Button onClick={handleUserAdd}>\n+                    + Add User\n+                </Button>\n \n-        </div>\n+            </div>\n \n-        {renderedUsers}\n-    </div>;\n+            {renderedUsers}\n+        </div>);\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679954102168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,10 +49,10 @@\n                     + Add User\n                 </Button>\n \n             </div>\n-\n             {renderedUsers}\n-        </div>);\n+        </div>\n+    );\n }\n \n export default UsersList;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1679954320623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n                 <Button onClick={handleUserAdd}>\n                     + Add User\n                 </Button>\n-\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679956388964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useEffect } from \"react\";\n+import { useEffect, useState } from \"react\";\n import { useDispatch, useSelector } from \"react-redux\";\n import { fetchUsers, addUser } from \"../store\";\n import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n@@ -7,8 +7,9 @@\n \n \n \n function UsersList() {\n+    const [isLoadingUsers, setIsLoadingUsers] = useState()\n     const dispatch = useDispatch();\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679956398074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n \n \n function UsersList() {\n-    const [isLoadingUsers, setIsLoadingUsers] = useState()\n+    const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const dispatch = useDispatch();\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679956435927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n+    const [loadingUsersError, setLoadingUsersError]\n     const dispatch = useDispatch();\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679956442719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n-    const [loadingUsersError, setLoadingUsersError]\n+    const [loadingUsersError, setLoadingUsersError] = useState(false);\n     const dispatch = useDispatch();\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679956454406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n-    const [loadingUsersError, setLoadingUsersError] = useState(false);\n+    const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const dispatch = useDispatch();\n \n \n     const { isLoading, data, error } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679956489632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const dispatch = useDispatch();\n \n \n-    const { isLoading, data, error } = useSelector((state) => {\n+    const { data } = useSelector((state) => {\n         return state.users;\n     });\n \n     useEffect(() => {\n"
+                },
+                {
+                    "date": 1679956505478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,13 @@\n     const handleUserAdd = () => {\n         dispatch(addUser());\n     };\n \n-    if (isLoading === true) {\n+    if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n         return <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n-    if (error) {\n+    if (loadingUsersError) {\n         return <div>Error fetching data...</div>;\n     }\n \n \n"
+                },
+                {
+                    "date": 1679956548243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n         return state.users;\n     });\n \n     useEffect(() => {\n+        setIsLoadingUsers(true);\n         dispatch(fetchUsers());\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n"
+                },
+                {
+                    "date": 1679956826524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,17 @@\n     });\n \n     useEffect(() => {\n         setIsLoadingUsers(true);\n-        dispatch(fetchUsers());\n+        dispatch(fetchUsers())\n+            .unwrap()\n+            .then(() => {\n+\n+            })\n+            .catch(() => {\n+\n+            });\n+\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n         dispatch(addUser());\n"
+                },
+                {
+                    "date": 1679956841589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,13 @@\n         setIsLoadingUsers(true);\n         dispatch(fetchUsers())\n             .unwrap()\n             .then(() => {\n-\n+                setIsLoadingUsers = false;\n             })\n             .catch(() => {\n \n             });\n-\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n         dispatch(addUser());\n"
+                },
+                {
+                    "date": 1679956850040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         setIsLoadingUsers(true);\n         dispatch(fetchUsers())\n             .unwrap()\n             .then(() => {\n-                setIsLoadingUsers = false;\n+                setIsLoadingUsers(false);\n             })\n             .catch(() => {\n \n             });\n"
+                },
+                {
+                    "date": 1679956867949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n             .unwrap()\n             .then(() => {\n                 setIsLoadingUsers(false);\n             })\n-            .catch(() => {\n+            .catch((err) => {\n+                setLoadingUsersError(err);\n \n             });\n     }, [dispatch]);\n \n"
+                },
+                {
+                    "date": 1679956907812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,13 @@\n             })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n \n-            });\n+\n+            })\n+            finally(() => {\n+            setIsLoadingUsers(false);\n+        });\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n         dispatch(addUser());\n"
+                },
+                {
+                    "date": 1679956923805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n                 setIsLoadingUsers(false);\n             })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n+                setIsLoadingUsers(false);\n \n \n             })\n             finally(() => {\n"
+                },
+                {
+                    "date": 1679956933153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,8 @@\n             })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n                 setIsLoadingUsers(false);\n-\n-\n             })\n             finally(() => {\n             setIsLoadingUsers(false);\n         });\n"
+                },
+                {
+                    "date": 1679956941901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,18 +20,18 @@\n     useEffect(() => {\n         setIsLoadingUsers(true);\n         dispatch(fetchUsers())\n             .unwrap()\n-            .then(() => {\n-                setIsLoadingUsers(false);\n-            })\n+            // .then(() => {\n+            //     setIsLoadingUsers(false);\n+            // })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n+                // setIsLoadingUsers(false);\n+            })\n+            .finally(() => {\n                 setIsLoadingUsers(false);\n-            })\n-            finally(() => {\n-            setIsLoadingUsers(false);\n-        });\n+            });\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n         dispatch(addUser());\n"
+                },
+                {
+                    "date": 1679956954862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n     useEffect(() => {\n         setIsLoadingUsers(true);\n         dispatch(fetchUsers())\n             .unwrap()\n-            // .then(() => {\n-            //     setIsLoadingUsers(false);\n-            // })\n+            .then(() => {\n+                setIsLoadingUsers(false);\n+            })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n                 // setIsLoadingUsers(false);\n             })\n"
+                },
+                {
+                    "date": 1679957102958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,10 @@\n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n+    const [isCreatingUser, setIsCreatingUser] = useState(false);\n+\n     const dispatch = useDispatch();\n \n \n     const { data } = useSelector((state) => {\n@@ -20,11 +22,11 @@\n     useEffect(() => {\n         setIsLoadingUsers(true);\n         dispatch(fetchUsers())\n             .unwrap()\n-            .then(() => {\n-                setIsLoadingUsers(false);\n-            })\n+            // .then(() => {\n+            //     setIsLoadingUsers(false);\n+            // })\n             .catch((err) => {\n                 setLoadingUsersError(err);\n                 // setIsLoadingUsers(false);\n             })\n"
+                },
+                {
+                    "date": 1679957143696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const [isCreatingUser, setIsCreatingUser] = useState(false);\n \n+    const [createUserError, setCreateUserError] = useState(null);\n     const dispatch = useDispatch();\n \n \n     const { data } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679957197225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const [isCreatingUser, setIsCreatingUser] = useState(false);\n-\n     const [createUserError, setCreateUserError] = useState(null);\n     const dispatch = useDispatch();\n \n \n"
+                },
+                {
+                    "date": 1679957292831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const [isCreatingUser, setIsCreatingUser] = useState(false);\n-    const [createUserError, setCreateUserError] = useState(null);\n+    const [creatingUserError, setCreatingUserError] = useState(null);\n     const dispatch = useDispatch();\n \n \n     const { data } = useSelector((state) => {\n@@ -35,9 +35,12 @@\n             });\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n-        dispatch(addUser());\n+        dispatch(addUser())\n+            .unwrap()\n+            .catch(err = setCreatingUserError(err))\n+\n     };\n \n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n"
+                },
+                {
+                    "date": 1679957300419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \n     const handleUserAdd = () => {\n         dispatch(addUser())\n             .unwrap()\n-            .catch(err = setCreatingUserError(err))\n+            .catch(err => setCreatingUserError(err))\n \n     };\n \n     if (isLoadingUsers === true) {\n"
+                },
+                {
+                    "date": 1679957355143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n     const handleUserAdd = () => {\n         dispatch(addUser())\n             .unwrap()\n             .catch(err => setCreatingUserError(err))\n+            .finally(setIsCreatingUser(false));\n \n     };\n \n     if (isLoadingUsers === true) {\n"
+                },
+                {
+                    "date": 1679957371581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,13 +35,13 @@\n             });\n     }, [dispatch]);\n \n     const handleUserAdd = () => {\n+        setIsCreatingUser(true);\n         dispatch(addUser())\n             .unwrap()\n             .catch(err => setCreatingUserError(err))\n             .finally(setIsCreatingUser(false));\n-\n     };\n \n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n"
+                },
+                {
+                    "date": 1679957405493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,11 +64,13 @@\n     return (\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n-                <Button onClick={handleUserAdd}>\n-                    + Add User\n-                </Button>\n+                {\n+                    <Button onClick={handleUserAdd}>\n+                        }\n+                        + Add User\n+                    </Button>\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957422248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,13 +64,11 @@\n     return (\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n-                {\n-                    <Button onClick={handleUserAdd}>\n-                        }\n-                        + Add User\n-                    </Button>\n+                {<Button onClick={handleUserAdd}>\n+                    + Add User\n+                </Button>}\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957431893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,11 +64,13 @@\n     return (\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n-                {<Button onClick={handleUserAdd}>\n-                    + Add User\n-                </Button>}\n+                {\n+                    <Button onClick={handleUserAdd}>\n+                        + Add User\n+                    </Button>\n+                }\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957464051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,11 +65,13 @@\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n                 {\n-                    <Button onClick={handleUserAdd}>\n-                        + Add User\n-                    </Button>\n+                    isCreatingUser\n+                        ? 'Creating User...'\n+                        : <Button onClick={handleUserAdd}>\n+                            + Add User\n+                        </Button>\n                 }\n             </div>\n             {renderedUsers}\n         </div>\n"
+                },
+                {
+                    "date": 1679957508928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,9 @@\n                         : <Button onClick={handleUserAdd}>\n                             + Add User\n                         </Button>\n                 }\n+                {creatingUserError && 'Error creating User....'}\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957515571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n                         : <Button onClick={handleUserAdd}>\n                             + Add User\n                         </Button>\n                 }\n-                {creatingUserError && 'Error creating User....'}\n+                {creatingUserError && 'Error creating User...'}\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957838136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n \n \n+function useThunk(thunk) {\n \n+}\n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     const [loadingUsersError, setLoadingUsersError] = useState(null);\n@@ -71,9 +73,9 @@\n                         : <Button onClick={handleUserAdd}>\n                             + Add User\n                         </Button>\n                 }\n-                {creatingUserError && 'Error creating User...'}\n+                {creatingUserError && 'Error creating user...'}\n             </div>\n             {renderedUsers}\n         </div>\n     );\n"
+                },
+                {
+                    "date": 1679957901594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n import Skeleton from \"./Skeleton\";\n \n \n function useThunk(thunk) {\n+    const [isLoading, setIsLoading] = useState(false);\n+    const [error, setError] = useState(null);\n \n }\n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679957922300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,12 @@\n function useThunk(thunk) {\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n \n+    const runThunk = () => {\n+\n+    };\n+\n }\n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n"
+                },
+                {
+                    "date": 1679957999867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,13 @@\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n \n     const runThunk = () => {\n+        setIsLoading(true);\n+        dispatch(thunk())\n+            .unwrap()\n+            .catch(err => setError(err))\n+            .finally(() => { })\n \n     };\n \n }\n"
+                },
+                {
+                    "date": 1679958014866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         setIsLoading(true);\n         dispatch(thunk())\n             .unwrap()\n             .catch(err => setError(err))\n-            .finally(() => { })\n+            .finally(() => setIsLoading(false))\n \n     };\n \n }\n"
+                },
+                {
+                    "date": 1679958021189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         setIsLoading(true);\n         dispatch(thunk())\n             .unwrap()\n             .catch(err => setError(err))\n-            .finally(() => setIsLoading(false))\n+            .finally(() => setIsLoading(false));\n \n     };\n \n }\n"
+                },
+                {
+                    "date": 1679958050919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n \n function useThunk(thunk) {\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n+    const dispatch = useDispatch();\n \n     const runThunk = () => {\n         setIsLoading(true);\n         dispatch(thunk())\n             .unwrap()\n             .catch(err => setError(err))\n             .finally(() => setIsLoading(false));\n-\n     };\n \n }\n \n"
+                },
+                {
+                    "date": 1679958076574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n             .unwrap()\n             .catch(err => setError(err))\n             .finally(() => setIsLoading(false));\n     };\n+    return [runThunk, isLoading, error]\n \n }\n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679958091167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,9 @@\n             .unwrap()\n             .catch(err => setError(err))\n             .finally(() => setIsLoading(false));\n     };\n-    return [runThunk, isLoading, error]\n-\n+    return [runThunk, isLoading, error];\n }\n \n function UsersList() {\n     const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n"
+                },
+                {
+                    "date": 1679958169931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useEffect, useState } from \"react\";\n+import { useEffect, useState, useCallback } from \"react\";\n import { useDispatch, useSelector } from \"react-redux\";\n import { fetchUsers, addUser } from \"../store\";\n import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n@@ -9,15 +9,15 @@\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n     const dispatch = useDispatch();\n \n-    const runThunk = () => {\n+    const runThunk = useCallback(() => {\n         setIsLoading(true);\n         dispatch(thunk())\n             .unwrap()\n             .catch(err => setError(err))\n             .finally(() => setIsLoading(false));\n-    };\n+    }, [dispatch, thunk]);\n     return [runThunk, isLoading, error];\n }\n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679958239838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,11 @@\n     return [runThunk, isLoading, error];\n }\n \n function UsersList() {\n-    const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n-    const [loadingUsersError, setLoadingUsersError] = useState(null);\n+    const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers);\n+    // const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n+    // const [loadingUsersError, setLoadingUsersError] = useState(null);\n     const [isCreatingUser, setIsCreatingUser] = useState(false);\n     const [creatingUserError, setCreatingUserError] = useState(null);\n     const dispatch = useDispatch();\n \n"
+                },
+                {
+                    "date": 1679958297358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,23 +33,25 @@\n         return state.users;\n     });\n \n     useEffect(() => {\n-        setIsLoadingUsers(true);\n-        dispatch(fetchUsers())\n-            .unwrap()\n-            // .then(() => {\n-            //     setIsLoadingUsers(false);\n-            // })\n-            .catch((err) => {\n-                setLoadingUsersError(err);\n-                // setIsLoadingUsers(false);\n-            })\n-            .finally(() => {\n-                setIsLoadingUsers(false);\n-            });\n-    }, [dispatch]);\n+        doFetchUsers();\n \n+        // setIsLoadingUsers(true);\n+        // dispatch(fetchUsers())\n+        //     .unwrap()\n+        //     // .then(() => {\n+        //     //     setIsLoadingUsers(false);\n+        //     // })\n+        //     .catch((err) => {\n+        //         setLoadingUsersError(err);\n+        //         // setIsLoadingUsers(false);\n+        //     })\n+        //     .finally(() => {\n+        //         setIsLoadingUsers(false);\n+        //     });\n+    }, [doFetchUsers]);\n+\n     const handleUserAdd = () => {\n         setIsCreatingUser(true);\n         dispatch(addUser())\n             .unwrap()\n"
+                },
+                {
+                    "date": 1679958427538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,15 @@\n function UsersList() {\n     const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers);\n     // const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     // const [loadingUsersError, setLoadingUsersError] = useState(null);\n-    const [isCreatingUser, setIsCreatingUser] = useState(false);\n-    const [creatingUserError, setCreatingUserError] = useState(null);\n+\n+    const [doCreateUser, isCreatingUser, creatingUserError] =\n+        useThunk(createUser)\n+\n+\n+    // const [isCreatingUser, setIsCreatingUser] = useState(false);\n+    // const [creatingUserError, setCreatingUserError] = useState(null);\n     const dispatch = useDispatch();\n \n \n     const { data } = useSelector((state) => {\n"
+                },
+                {
+                    "date": 1679958448486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     // const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n     // const [loadingUsersError, setLoadingUsersError] = useState(null);\n \n     const [doCreateUser, isCreatingUser, creatingUserError] =\n-        useThunk(createUser)\n+        useThunk(addUser);\n \n \n     // const [isCreatingUser, setIsCreatingUser] = useState(false);\n     // const [creatingUserError, setCreatingUserError] = useState(null);\n"
+                },
+                {
+                    "date": 1679958486078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,13 +56,16 @@\n         //     });\n     }, [doFetchUsers]);\n \n     const handleUserAdd = () => {\n-        setIsCreatingUser(true);\n-        dispatch(addUser())\n-            .unwrap()\n-            .catch(err => setCreatingUserError(err))\n-            .finally(setIsCreatingUser(false));\n+        doCreateUser();\n+\n+\n+        // setIsCreatingUser(true);\n+        // dispatch(addUser())\n+        //     .unwrap()\n+        //     .catch(err => setCreatingUserError(err))\n+        //     .finally(setIsCreatingUser(false));\n     };\n \n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n"
+                },
+                {
+                    "date": 1679958521701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n \n     // const [isCreatingUser, setIsCreatingUser] = useState(false);\n     // const [creatingUserError, setCreatingUserError] = useState(null);\n-    const dispatch = useDispatch();\n+    // const dispatch = useDispatch();\n \n \n     const { data } = useSelector((state) => {\n         return state.users;\n"
+                },
+                {
+                    "date": 1679958557283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n     const dispatch = useDispatch();\n \n-    const runThunk = useCallback(() => {\n+    const runThunk = useCallback((arg) => {\n         setIsLoading(true);\n-        dispatch(thunk())\n+        dispatch(thunk(arg))\n             .unwrap()\n             .catch(err => setError(err))\n             .finally(() => setIsLoading(false));\n     }, [dispatch, thunk]);\n"
+                },
+                {
+                    "date": 1679958562365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,15 +9,16 @@\n     const [isLoading, setIsLoading] = useState(false);\n     const [error, setError] = useState(null);\n     const dispatch = useDispatch();\n \n-    const runThunk = useCallback((arg) => {\n-        setIsLoading(true);\n-        dispatch(thunk(arg))\n-            .unwrap()\n-            .catch(err => setError(err))\n-            .finally(() => setIsLoading(false));\n-    }, [dispatch, thunk]);\n+    const runThunk = useCallback(\n+        (arg) => {\n+            setIsLoading(true);\n+            dispatch(thunk(arg))\n+                .unwrap()\n+                .catch(err => setError(err))\n+                .finally(() => setIsLoading(false));\n+        }, [dispatch, thunk]);\n     return [runThunk, isLoading, error];\n }\n \n function UsersList() {\n"
+                },
+                {
+                    "date": 1679958814170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,12 @@\n-import { useEffect, useState, useCallback } from \"react\";\n-import { useDispatch, useSelector } from \"react-redux\";\n+import { useEffect } from \"react\";\n+import { useSelector } from \"react-redux\";\n import { fetchUsers, addUser } from \"../store\";\n import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n \n \n-function useThunk(thunk) {\n-    const [isLoading, setIsLoading] = useState(false);\n-    const [error, setError] = useState(null);\n-    const dispatch = useDispatch();\n \n-    const runThunk = useCallback(\n-        (arg) => {\n-            setIsLoading(true);\n-            dispatch(thunk(arg))\n-                .unwrap()\n-                .catch(err => setError(err))\n-                .finally(() => setIsLoading(false));\n-        }, [dispatch, thunk]);\n-    return [runThunk, isLoading, error];\n-}\n \n function UsersList() {\n     const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers);\n     // const [isLoadingUsers, setIsLoadingUsers] = useState(false);\n"
+                },
+                {
+                    "date": 1679958855764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { useSelector } from \"react-redux\";\n import { fetchUsers, addUser } from \"../store\";\n import Button from \"./Button\";\n import Skeleton from \"./Skeleton\";\n+import { useThunk } from \"../hooks/use-thunk\";\n \n \n \n \n"
+                },
+                {
+                    "date": 1679958916890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,15 +76,15 @@\n     return (\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n-                {\n+                {/* {\n                     isCreatingUser\n-                        ? 'Creating User...'\n-                        : <Button onClick={handleUserAdd}>\n-                            + Add User\n-                        </Button>\n-                }\n+                        ? 'Creating User...' */}\n+                <Button onClick={handleUserAdd}>\n+                    + Add User\n+                </Button>\n+                {/* } */}\n                 {creatingUserError && 'Error creating user...'}\n             </div>\n             {renderedUsers}\n         </div>\n"
+                },
+                {
+                    "date": 1679958936921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n                 {/* {\n                     isCreatingUser\n                         ? 'Creating User...' */}\n-                <Button onClick={handleUserAdd}>\n+                <Button loading={isCreatingUser} onClick={handleUserAdd}>\n                     + Add User\n                 </Button>\n                 {/* } */}\n                 {creatingUserError && 'Error creating user...'}\n"
+                },
+                {
+                    "date": 1679959276282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n         //     .unwrap()\n         //     .catch(err => setCreatingUserError(err))\n         //     .finally(setIsCreatingUser(false));\n     };\n+    let content;\n \n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n         return <Skeleton times={6} className=\"h-10 w-full\" />;\n"
+                },
+                {
+                    "date": 1679959292903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n     let content;\n \n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n-        return <Skeleton times={6} className=\"h-10 w-full\" />;\n+        content = <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n     if (loadingUsersError) {\n         return <div>Error fetching data...</div>;\n     }\n"
+                },
+                {
+                    "date": 1679959298269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         // return <div>Loading...</div>;\n         content = <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n     if (loadingUsersError) {\n-        return <div>Error fetching data...</div>;\n+        content = <div>Error fetching data...</div>;\n     }\n \n \n     const renderedUsers = data.map((user) => {\n"
+                },
+                {
+                    "date": 1679959347952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,19 +62,22 @@\n     }\n     if (loadingUsersError) {\n         content = <div>Error fetching data...</div>;\n     }\n+    else {\n+        content = data.map((user) => {\n+            return (\n+                <div key={user.id} className=\"mb-2 border rounded\">\n+                    <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n+                        {user.name}\n+                    </div>\n+                </div >\n+            );\n+        });\n+    }\n \n \n-    const renderedUsers = data.map((user) => {\n-        return (\n-            <div key={user.id} className=\"mb-2 border rounded\">\n-                <div className=\"flex p-2 justify-between items-center cursor-pointer\">\n-                    {user.name}\n-                </div>\n-            </div >\n-        );\n-    });\n+\n     return (\n         <div>\n             <div className=\"flex flex-row justify-between m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n"
+                },
+                {
+                    "date": 1679959369588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,9 +89,9 @@\n                 </Button>\n                 {/* } */}\n                 {creatingUserError && 'Error creating user...'}\n             </div>\n-            {renderedUsers}\n+            {content}\n         </div>\n     );\n }\n \n"
+                },
+                {
+                    "date": 1679959496873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     if (isLoadingUsers === true) {\n         // return <div>Loading...</div>;\n         content = <Skeleton times={6} className=\"h-10 w-full\" />;\n     }\n-    if (loadingUsersError) {\n+    else if (loadingUsersError) {\n         content = <div>Error fetching data...</div>;\n     }\n     else {\n         content = data.map((user) => {\n"
+                },
+                {
+                    "date": 1679959568432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n \n \n     return (\n         <div>\n-            <div className=\"flex flex-row justify-between m-3\">\n+            <div className=\"flex flex-row justify-between items-center m-3\">\n                 <h1 className=\"m-2 text-xl\">Users</h1>\n                 {/* {\n                     isCreatingUser\n                         ? 'Creating User...' */}\n"
+                }
+            ],
+            "date": 1679944469983,
+            "name": "Commit-0",
+            "content": "import { useEffect } from \"react\";\n\n\n\nfunction UsersList() {\n    return 'Users List';\n}\n\nexport default UsersList;"
+        }
+    ]
+}
