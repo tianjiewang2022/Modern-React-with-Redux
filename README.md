@@ -1,6 +1,6 @@
 # Modern React with Redux
 
-This repository contains a modern React application built with Redux, showcasing various features and best practices. If you're looking to learn or refresh your knowledge of React and Redux, this is a great place to start.
+This repository contains a modern React application built with Redux, showcasing various features and best practices.
 
 ## Table of Contents
 
