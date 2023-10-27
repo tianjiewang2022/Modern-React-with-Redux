@@ -2,6 +2,15 @@
 
 Modern-React-with-Redux is a cutting-edge web application that seamlessly combines React, Tailwind CSS, and Bootstrap to deliver an exceptional user experience. This project demonstrates best practices in React and Redux Toolkit Query, which is implemented for efficient asynchronous data fetching with built-in caching and normalization, while incorporating Database Simulation and Custom React Hooks, providing a comprehensive learning resource and a solid starting point for the web development journey.
 
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Usage and Learning Resources](#usage-and-learning-resources)
+- [License](#license)
+
 ## Key Features:
 
 <font color="blue">**Seamless Page Navigation**: Effortlessly navigate through the application's user interface, crafted with React, Tailwind CSS, and Bootstrap, ensuring a smooth and responsive user experience.</font>
@@ -15,14 +24,6 @@ Modern-React-with-Redux is a cutting-edge web application that seamlessly combin
 <font color="blue">**Database Simulation**: Expedite your development process with the built-in database simulation, facilitating efficient testing and prototyping while ensuring data reliability.</font>
 
 <font color="blue">**Redux Toolkit Query**: This project leverages Redux Toolkit Query, a powerful tool for asynchronous data fetching, featuring built-in caching and data normalization. Experience efficient and hassle-free data management within your application.</font>
-
-## Table of Contents
-
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Available Scripts](#available-scripts)
-- [Usage and Learning Resources](#usage-and-learning-resources)
-- [License](#license)
 
 ## Project Structure
 
