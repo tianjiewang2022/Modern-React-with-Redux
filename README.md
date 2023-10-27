@@ -13,22 +13,22 @@ Modern-React-with-Redux is a cutting-edge web application that seamlessly combin
 
 ## Key Features:
 
-⭐ **Seamless Page Navigation**: 
+⭐ **Seamless Page Navigation:** 
 Effortlessly navigate through the application's user interface, crafted with React, Tailwind CSS, and Bootstrap, ensuring a smooth and responsive user experience.
 
-⭐ **Efficient Data Fetching**: 
+⭐ **Efficient Data Fetching:**
 Utilizing Redux Toolkit Query, the project excels in efficient asynchronous data fetching with built-in caching and normalization, ensuring optimal data management in your application.
 
-⭐ **React, Tailwind CSS, and Bootstrap**: 
+⭐ **React, Tailwind CSS, and Bootstrap:**
 Harness the power of cutting-edge technologies such as React, Tailwind CSS, and Bootstrap to create a responsive and visually appealing user interface that adheres to modern design standards.
 
-⭐ **Custom React Hooks**: 
+⭐ **Custom React Hooks:**
 Dive into the world of custom React hooks, including use-thunk.js, specifically designed to streamline your application's logic and state management. These custom hooks enhance the efficiency and maintainability of your codebase.
 
-⭐ **Database Simulation**: 
+⭐ **Database Simulation:**
 Expedite your development process with the built-in database simulation, facilitating efficient testing and prototyping while ensuring data reliability.
 
-⭐ **Redux Toolkit Query**: 
+⭐ **Redux Toolkit Query:**
 This project leverages Redux Toolkit Query, a powerful tool for asynchronous data fetching, featuring built-in caching and data normalization. Experience efficient and hassle-free data management within your application.
 
 ## Project Structure
