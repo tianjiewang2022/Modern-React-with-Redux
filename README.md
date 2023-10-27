@@ -7,8 +7,7 @@ This repository contains a modern React application built with Redux, showcasing
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Usage and Learning Resources](#usage-and-learning-resources)
 - [License](#license)
 
 ## Project Structure
@@ -107,41 +106,9 @@ In the project directory, you can run the following scripts:
 - `npm test`: Launches the test runner.
 - `npm eject`: Ejects the project from Create React App for advanced configuration (use with caution).
 
-## Usage
+## Usage and Learning Resources
 
-Feel free to use and modify this project as a learning resource for modern React and Redux development. You can explore the components, hooks, store structure, and best practices applied in this repository to enhance your React skills.
-
-Additionally, you can adapt this project for your own purposes or use it as a starting point for building your own web applications.
-
-## Contributing
-
-If you would like to contribute to this project, please follow these steps:
-
-1. Fork the repository to your GitHub account.
-
-2. Clone your fork to your local machine:
-
-   ```shell
-   git clone https://github.com/your-username/Modern-React-with-Redux.git
-   ```
-
-3. Create a new branch for your changes:
-
-   ```shell
-   git checkout -b feature/your-feature-name
-   ```
-
-4. Make your changes and commit them.
-
-5. Push your changes to your fork:
-
-   ```shell
-   git push origin feature/your-feature-name
-   ```
-
-6. Create a pull request on the original repository, explaining your changes and improvements.
-
-7. Your contribution will be reviewed, and if accepted, it will be merged into the project.
+You could get more knowledge and resource from the [React Documentation Web](https://create-react-app.dev/docs/documentation-intro)
 
 ## License
 
