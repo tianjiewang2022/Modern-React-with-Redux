@@ -13,17 +13,23 @@ Modern-React-with-Redux is a cutting-edge web application that seamlessly combin
 
 ## Key Features:
 
-<font color="blue">**Seamless Page Navigation**: Effortlessly navigate through the application's user interface, crafted with React, Tailwind CSS, and Bootstrap, ensuring a smooth and responsive user experience.</font>
+⭐ **Seamless Page Navigation**
+Effortlessly navigate through the application's user interface, crafted with React, Tailwind CSS, and Bootstrap, ensuring a smooth and responsive user experience.
 
-<font color="blue">**Efficient Data Fetching**: Utilizing Redux Toolkit Query, the project excels in efficient asynchronous data fetching with built-in caching and normalization, ensuring optimal data management in your application.</font>
+⭐ **Efficient Data Fetching**
+Utilizing Redux Toolkit Query, the project excels in efficient asynchronous data fetching with built-in caching and normalization, ensuring optimal data management in your application.
 
-<font color="blue">**React, Tailwind CSS, and Bootstrap**: Harness the power of cutting-edge technologies such as React, Tailwind CSS, and Bootstrap to create a responsive and visually appealing user interface that adheres to modern design standards.</font>
+⭐ **React, Tailwind CSS, and Bootstrap**
+Harness the power of cutting-edge technologies such as React, Tailwind CSS, and Bootstrap to create a responsive and visually appealing user interface that adheres to modern design standards.
 
-<font color="blue">**Custom React Hooks**: Dive into the world of custom React hooks, including use-thunk.js, specifically designed to streamline your application's logic and state management. These custom hooks enhance the efficiency and maintainability of your codebase.</font>
+⭐ **Custom React Hooks**
+Dive into the world of custom React hooks, including use-thunk.js, specifically designed to streamline your application's logic and state management. These custom hooks enhance the efficiency and maintainability of your codebase.
 
-<font color="blue">**Database Simulation**: Expedite your development process with the built-in database simulation, facilitating efficient testing and prototyping while ensuring data reliability.</font>
+⭐ **Database Simulation**
+Expedite your development process with the built-in database simulation, facilitating efficient testing and prototyping while ensuring data reliability.
 
-<font color="blue">**Redux Toolkit Query**: This project leverages Redux Toolkit Query, a powerful tool for asynchronous data fetching, featuring built-in caching and data normalization. Experience efficient and hassle-free data management within your application.</font>
+⭐ **Redux Toolkit Query**
+This project leverages Redux Toolkit Query, a powerful tool for asynchronous data fetching, featuring built-in caching and data normalization. Experience efficient and hassle-free data management within your application.
 
 ## Project Structure
 
